@@ -5,20 +5,19 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
-public class Snowball {
+public class Fish {
     public Vector2 position;
     public Vector2 velocity;
     public Sprite sprite;
-    public float shotSpeed;
+    public int health;
 
-    Snowball(Texture tex, Vector2 pos, Vector2 vel, float shotSpeed)
+    Fish(Texture fishTexture, Vector2 pos)
     {
-        sprite = new Sprite(tex);
-        sprite.setCenter(pos.x, pos.y);
-        sprite.setScale(0.3f);
         position = pos;
-        velocity = new Vector2(vel.x*shotSpeed,vel.y*shotSpeed);
-        this.shotSpeed = shotSpeed;
+        velocity = new Vector2(0, 0);
+        sprite = new Sprite(fishTexture);
+        sprite.setScale(0.2f);
+        health = 5;
     }
 
     void draw(SpriteBatch batch)
@@ -26,5 +25,4 @@ public class Snowball {
         sprite.setCenter(position.x, position.y);
         sprite.draw(batch);
     }
-
 }

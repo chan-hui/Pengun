@@ -14,12 +14,15 @@ public class Player {
     public Sprite sprite;
     public boolean isFacingLeft = true;
 
+    public int health;
+
     Player(Texture playerTexture)
     {
         position = new Vector2(0, 0);
         velocity = new Vector2(0, 0);
         sprite = new Sprite(playerTexture);
         sprite.setScale(0.3f);
+        health = 100;
     }
 
     void inputHandler(int keyCode)
